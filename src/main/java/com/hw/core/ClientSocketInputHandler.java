@@ -25,8 +25,6 @@ public class ClientSocketInputHandler extends Thread {
                 if (response.isEmpty()){
                     continue;
                 }
-                Logger.log("Client socket input handler received: " + response);
-
 
                 var parts = response.split(":");
                 var hasContent = parts.length > 2;

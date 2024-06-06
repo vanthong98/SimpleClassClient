@@ -17,27 +17,27 @@
         <Button fx:id="connectButton" style="-fx-font-weight: bold; -fx-text-fill: green;" onAction="#onConnectButtonClick" text="CONNECT" />
         <Button fx:id="disconnectButton" disable="true" style="-fx-font-weight: bold; -fx-text-fill: red;" onAction="#onDisconnectButtonClick" text="DISCONNECT" />
     </HBox>
-    <HBox prefHeight="465" prefWidth="1070" spacing="10">
-        <VBox prefWidth="400" spacing="5">
+    <HBox prefHeight="365" prefWidth="770" spacing="10">
+        <VBox prefWidth="300" spacing="5">
             <Label text="Teacher board"/>
-            <Pane prefHeight="400" prefWidth="400" style="-fx-border-style: solid; -fx-border-color: red">
-                <Canvas disable="true" fx:id="canvas" height="400" width="400" />
+            <Pane prefHeight="300" prefWidth="300" style="-fx-border-style: solid; -fx-border-color: red">
+                <Canvas disable="true" fx:id="canvas" height="300" width="300" />
             </Pane>
         </VBox>
-        <VBox prefWidth="400" spacing="5">
+        <VBox prefWidth="250" spacing="5">
             <Label text="Class chat room"/>
-            <TextArea fx:id="classMessageTextArea" editable="false" prefHeight="350" />
+            <TextArea fx:id="classMessageTextArea" editable="false" prefHeight="250" />
             <TextArea fx:id="messageTextArea" prefHeight="45" editable="false" />
             <HBox alignment="CENTER_RIGHT" spacing="5">
                 <Button disable="true" fx:id="sendMessageButton" onAction="#onSendMessageButtonClick" text="Send message" />
             </HBox>
         </VBox>
-        <VBox spacing="5" prefWidth="250">
+        <VBox spacing="5" prefWidth="200">
             <Label text="Received file list"/>
             <ListView fx:id="receivedFileListView" onMouseClicked="#onReceivedFileListViewClick" />
         </VBox>
     </HBox>
-    <VBox spacing="10" prefHeight="125">
+    <VBox spacing="5" prefHeight="100">
         <Label text="System console"/>
         <TextArea editable="false" fx:id="systemConsoleTextArea"/>
     </VBox>
