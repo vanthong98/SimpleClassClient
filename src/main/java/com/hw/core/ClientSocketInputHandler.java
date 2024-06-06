@@ -36,6 +36,10 @@ public class ClientSocketInputHandler extends Thread {
                     Dispatcher.sendToClassMessage(senderPart, contentPart);
                 }
 
+                if (Objects.equals(typePart, MessageType.ChangePenColor.toString())){
+                    Dispatcher.changePenColor(contentPart);
+                }
+
                 if (Objects.equals(typePart, MessageType.SendBoardActionStartDrawing.toString())){
                     Dispatcher.startDrawing(contentPart);
                 }
@@ -54,6 +58,7 @@ public class ClientSocketInputHandler extends Thread {
                     var fileName = fileParts[0];
                     var mimeType = fileParts[1];
                     var base64 = fileParts[2];
+
                     Dispatcher.addReceivedFiles(fileName, mimeType, base64);
                 }
 

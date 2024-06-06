@@ -7,6 +7,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.concurrent.PriorityBlockingQueue;
 
 public class Dispatcher {
@@ -15,7 +16,7 @@ public class Dispatcher {
     private static Canvas _canvas;
     private static ObservableList<String> _fileNames;
     private static final HashMap<String, CommonFile> _files = new HashMap<>();
-
+    private static Color penColor = Color.PURPLE;
     public static void init(TextArea classMessageTextArea, Canvas canvas, ObservableList<String> fileNames) {
         _classMessageTextArea = classMessageTextArea;
         _canvas = canvas;
@@ -53,6 +54,7 @@ public class Dispatcher {
         var y = coordinate[1];
 
         Platform.runLater(() -> {
+
             var context = _canvas.getGraphicsContext2D();
             context.beginPath();
             context.moveTo(Double.parseDouble(x), Double.parseDouble(y));
@@ -79,6 +81,13 @@ public class Dispatcher {
             var context = _canvas.getGraphicsContext2D();
             context.setFill(Color.WHITESMOKE); // Set the fill color to white (or any color you desire)
             context.fillRect(1, 1, context.getCanvas().getWidth() -2, context.getCanvas().getHeight()-2);
+        });
+    }
+
+    public static void changePenColor(String contentPart) {
+        Platform.runLater(() -> {
+            var context = _canvas.getGraphicsContext2D();
+            context.setStroke(Color.web(contentPart)); // Set the fill color to white (or any color you desire)
         });
     }
 }

@@ -27,14 +27,16 @@
         <VBox prefWidth="250" spacing="5">
             <Label text="Class chat room"/>
             <TextArea fx:id="classMessageTextArea" editable="false" prefHeight="250" />
-            <TextArea fx:id="messageTextArea" prefHeight="45" editable="false" />
+            <TextArea fx:id="messageTextArea" prefHeight="46" editable="false" />
             <HBox alignment="CENTER_RIGHT" spacing="5">
                 <Button disable="true" fx:id="sendMessageButton" onAction="#onSendMessageButtonClick" text="Send message" />
             </HBox>
         </VBox>
-        <VBox spacing="5" prefWidth="200">
-            <Label text="Received file list"/>
-            <ListView fx:id="receivedFileListView" onMouseClicked="#onReceivedFileListViewClick" />
+        <VBox prefWidth="200" >
+            <VBox spacing="5" prefHeight="325">
+                <Label text="Received file list"/>
+                <ListView fx:id="receivedFileListView" onMouseClicked="#onReceivedFileListViewClick" />
+            </VBox>
         </VBox>
     </HBox>
     <VBox spacing="5" prefHeight="100">

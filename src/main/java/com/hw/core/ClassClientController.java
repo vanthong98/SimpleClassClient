@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -61,6 +62,7 @@ public class ClassClientController {
             disconnectButton.setDisable(false);
             messageTextArea.setDisable(false);
             messageTextArea.setEditable(true);
+            canvas.getGraphicsContext2D().setStroke(Color.PURPLE);
 
         } catch (IOException e) {
             Logger.log("Could not connect to socket");
