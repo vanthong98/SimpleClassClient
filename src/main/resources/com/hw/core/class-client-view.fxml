@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hw.core.ClassClientController">
+    <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+    </padding>
+    <HBox spacing="5" alignment="CENTER_RIGHT">
+        <Label text="Server address"/>
+        <TextField fx:id="addressTextField" text="127.0.0.1"/>
+        <Label text="Port"/>
+        <TextField fx:id="portTextField" text="12345"/>
+        <Button fx:id="connectButton" style="-fx-font-weight: bold; -fx-text-fill: green;" onAction="#onConnectButtonClick" text="CONNECT" />
+        <Button fx:id="disconnectButton" disable="true" style="-fx-font-weight: bold; -fx-text-fill: red;" onAction="#onDisconnectButtonClick" text="DISCONNECT" />
+    </HBox>
+    <HBox prefHeight="465" prefWidth="1070" spacing="10">
+        <VBox prefWidth="400" spacing="5">
+            <Label text="Teacher board"/>
+            <Pane prefHeight="400" prefWidth="400" style="-fx-border-style: solid; -fx-border-color: red">
+                <Canvas disable="true" fx:id="canvas" height="400" width="400" />
+            </Pane>
+        </VBox>
+        <VBox prefWidth="400" spacing="5">
+            <Label text="Class chat room"/>
+            <TextArea fx:id="classMessageTextArea" editable="false" prefHeight="350" />
+            <TextArea fx:id="messageTextArea" prefHeight="45" editable="false" />
+            <HBox alignment="CENTER_RIGHT" spacing="5">
+                <Button disable="true" fx:id="sendMessageButton" onAction="#onSendMessageButtonClick" text="Send message" />
+            </HBox>
+        </VBox>
+        <VBox spacing="5" prefWidth="250">
+            <Label text="Received file list"/>
+            <ListView fx:id="receivedFileListView" onMouseClicked="#onReceivedFileListViewClick" />
+        </VBox>
+    </HBox>
+    <VBox spacing="10" prefHeight="125">
+        <Label text="System console"/>
+        <TextArea editable="false" fx:id="systemConsoleTextArea"/>
+    </VBox>
+</VBox>
