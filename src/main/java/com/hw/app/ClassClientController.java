@@ -1,5 +1,9 @@
-package com.hw.core;
+package com.hw.app;
 
+import com.hw.core.ClientSocketInputHandler;
+import com.hw.core.ClientSocketOutputHandler;
+import com.hw.core.Dispatcher;
+import com.hw.core.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

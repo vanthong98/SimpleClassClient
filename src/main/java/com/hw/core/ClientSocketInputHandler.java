@@ -40,15 +40,15 @@ public class ClientSocketInputHandler extends Thread {
                     Dispatcher.changePenColor(contentPart);
                 }
 
-                if (Objects.equals(typePart, MessageType.SendBoardActionStartDrawing.toString())){
+                if (Objects.equals(typePart, MessageType.StartDrawing.toString())){
                     Dispatcher.startDrawing(contentPart);
                 }
 
-                if (Objects.equals(typePart, MessageType.SendBoardActionDrawing.toString())){
+                if (Objects.equals(typePart, MessageType.Drawing.toString())){
                     Dispatcher.draw(contentPart);
                 }
 
-                if (Objects.equals(typePart, MessageType.SendBoardActionClear.toString())){
+                if (Objects.equals(typePart, MessageType.ClearBoard.toString())){
                     Dispatcher.clear();
                 }
 

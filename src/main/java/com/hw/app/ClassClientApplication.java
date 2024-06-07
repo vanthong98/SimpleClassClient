@@ -1,4 +1,4 @@
-package com.hw.core;
+package com.hw.app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
